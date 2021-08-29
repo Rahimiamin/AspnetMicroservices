@@ -37,7 +37,7 @@ namespace Ordering.API
 
                 config.UsingRabbitMq((ctx, cfg) => {
                     cfg.Host(Configuration["EventBusSettings:HostAddress"]);
-                    cfg.UseHealthCheck(ctx);
+                    //cfg.UseHealthCheck(ctx);
 
                     cfg.ReceiveEndpoint(EventBusConstants.BasketCheckoutQueue, c => {
                         c.ConfigureConsumer<BasketCheckoutConsumer>(ctx);
